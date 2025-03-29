@@ -1,19 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import DashboardView from '../views/DashboardView.vue'
+import ActivityLogView from '../views/ActivityLogView.vue'
+import ProfileView from '../views/ProfileView.vue'
+import NotificationView from '../views/NotificationView.vue'
+import ReportsView from '../views/ReportsView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'dashboard',
+    component: DashboardView
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/activity-log',
+    name: 'activity-log',
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (activitylog.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "activitylog" */ '../views/ActivityLogView.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../views/ProfileView.vue')
+  },
+  {
+    path: '/notification',
+    name: 'notification',
+    component: () => import('../views/NotificationView.vue')
+  },
+  {
+    path: '/reports',
+    name: 'reports',
+    component: () => import('../views/ReportsView.vue')
   }
 ]
 
