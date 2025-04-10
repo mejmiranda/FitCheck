@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; min-height: 100vh;">
     <div class="vertical-nav">
-      <div style="display: flex; justify-content: center; padding: 20px; margin-bottom: 50px; margin-top: 15px;"> 
+      <div style="display: flex; justify-content: center; padding: 20px; margin-bottom: 50px; margin-top: 15px;">
         <img src="@/assets/logo.png" alt="Logo" style="max-height: 35px; margin-right: 5px;" />
       </div>
       <router-link to="/profile" :class="{ active: $route.path === '/profile' }">
@@ -24,12 +24,13 @@
         <img src="@/assets/reportsicon.png" alt="Reports Icon" class="icon" />
         Reports
       </router-link>
-    </div>
+      </div>
     <div style="flex-grow: 1; padding: 20px;">
       <router-view />
     </div>
   </div>
 </template>
+
 
 <style>
 #app {
@@ -75,3 +76,7 @@
   margin-right: 8px;
 }
 </style>
+
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>

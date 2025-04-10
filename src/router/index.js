@@ -11,6 +11,8 @@ const routes = [
     name: 'dashboard',
     component: DashboardView
   },
+
+
   {
     path: '/activity-log',
     name: 'activity-log',
@@ -42,3 +44,4 @@ const router = createRouter({
 })
 
 export default router
+

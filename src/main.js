@@ -1,5 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+// src/main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { db } from './Firebase'; // Import the db object
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+
+app.use(router);
+
+// Make Firebase Firestore globally available (optional, but convenient)
+app.config.globalProperties.$db = db;
+
+app.mount('#app');
